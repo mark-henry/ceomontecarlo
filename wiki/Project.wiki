@@ -16,7 +16,7 @@ What we need to do for the project
 Dj = difference in averageCEO and average Psycho for a specific trait j
 
 Member Data
-int\[numSubjects\] shuffle - array to contain column numbers - this is what gets shuffled - first half is CEO, last half is Psycho
+int[numSubjects] shuffle - array to contain column numbers - this is what gets shuffled - first half is CEO, last half is Psycho
 int[100][numSubjects] surveyData - 2d array of data - which CQ vs. data
     ^original data does not get changed
 float[100][sampleSize] Djs - 2d array - which CQ vs. accumulated list of Djs
