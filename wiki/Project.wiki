@@ -41,8 +41,8 @@ randomize()
     //randomly distribute columns of data
     //we'll put this in a for loop
 doOutcomes(int sampleSize)
-    does yea many random assignments and calculates
-    calls computeDj() and randomize()
+    //does yea many random assignments and calculates
+    //calls computeDj() and randomize()
 everyPossibleAssignment()
     //instead of random, it does every assignment 
     //ensuring one and only one of every possible outcome
