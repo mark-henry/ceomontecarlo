@@ -1,0 +1,53 @@
+#Compilation of jobs and data for the project
+
+= Introduction =
+
+What we need to do for the project
+
+
+= Details =
+
+1 read in Excel spreadsheet
+2 compute d sub j for each CQ
+3 compute d sub j star for each CQ on a jillion outcomes
+4 compute p-value—the number of times we get (d sub j star) > (original d sub j)
+5 write to Excel
+
+Dj = difference in averageCEO and average Psycho for a specific trait j
+
+Member Data
+int[numSubjects] shuffle - array to contain column numbers - this is what gets shuffled - first half is CEO, last half is Psycho
+int[100][numSubjects] surveyData - 2d array of data - which CQ vs. data
+    ^original data does not get changed
+float[100][sampleSize] Djs - 2d array - which CQ vs. accumulated list of Djs
+    ^This would contain data from every test that was carried out
+float[100] 2 1d arrays - Dj of every CQ for original data
+int[100] pValues - tally for each CQ how many times Djs[j][0] > djs[j][x] 
+    djs[0] with contain the unchanged colums from shuffle 
+    then every one after will be shuffled
+
+Functions
+constructor
+    init shuffle
+readSheet()
+    initial reading & parse to data
+    determine numSubjects
+    initialize arrays
+writeSheet()
+    final call
+randomize()
+    randomly distribute columns of data
+    we'll put this in a for loop
+doOutcomes(int sampleSize)
+    does yea many random assignments and calculates
+    calls computeDj() and randomize()
+everyPossibleAssignment()
+    instead of random, it does every assignment 
+    ensuring one and only one of every possible outcome
+    scrambles and then calls computeDj()
+computeDj(CQ #, startingColumn, endingColumn)
+    computes Dj for given CQ number
+    put in a for loop
+tallyPvalue(CQ #, pvalue, Ceo or psycho?)
+    checks argument against Dj of original data
+
