@@ -5,3 +5,4 @@
  # compute d sub j for each CQ
  # compute d sub j star for each CQ on a jillion outcomes
  # compute p-value—the number of times we get (d sub j star) > (original d sub j)
+ # write to Excel
